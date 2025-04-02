@@ -1,6 +1,6 @@
-*Projeto de Estudo em Teste Automatizado com Playwright, Node e TypeScript*
+# Projeto de Estudo em Teste Automatizado com Playwright, Node e TypeScript
 
-*Introdução*
+### Introdução
 Este projeto é um estudo sobre teste automatizado utilizando Playwright, Node e TypeScript. O objetivo é criar uma suíte de testes automatizados para uma aplicação web, utilizando as melhores práticas de teste e desenvolvimento.
 
 *Tecnologias Utilizadas*
@@ -9,15 +9,15 @@ Este projeto é um estudo sobre teste automatizado utilizando Playwright, Node e
 - TypeScript: um superset de JavaScript que adiciona tipagem estática e outras funcionalidades para melhorar a produtividade e a manutenibilidade do código.
 
 *Estrutura do Projeto*
-- `tests`: diretório que contém os testes automatizados.
+- `tests`: pasta que contém os testes automatizados.
 - `playwright.config.ts`: arquivo de configuração do Playwright.
-- `playwright-report`: diretório onde são salvos os reports dos testes.
+- `playwright-report`: pasta onde são salvos os resultados dos testes.
 
 *Como Executar os Testes*
 1. Instale as dependências do projeto com `npm install`.
 2. Execute os testes com `npx playwright test`.
 
-*Como Contribuir*
+#### Como Contribuir
 Se você deseja contribuir para este projeto, por favor:
 
 1. Faça um fork do repositório.
