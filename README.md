@@ -1,5 +1,3 @@
-Aqui está um exemplo de README.md para um projeto de estudo em teste automatizado com Playwright, Node e TypeScript:
-
 *Projeto de Estudo em Teste Automatizado com Playwright, Node e TypeScript*
 
 *Introdução*
