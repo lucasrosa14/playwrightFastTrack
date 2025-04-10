@@ -111,11 +111,11 @@ test.describe('Teste com modelagem de dados', () => {
         await page.fill('id=input-password', user.password)
         await page.fill('id=input-confirm', user.confirm)
 
-        if (user.newsletter == true) {
+        if (user.newsletter) {
         await page.click('xpath=//label[@for="input-newsletter-yes"]')
         }
 
-        if (user.terms == true) {
+        if (user.terms) {
         await page.click('xpath=//label[@for="input-agree"]')
         }
         
