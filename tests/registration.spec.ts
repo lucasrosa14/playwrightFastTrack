@@ -1,6 +1,7 @@
 import {test, expect} from '@playwright/test'
 import { UserModel } from './fixtures/user.model'
-const { faker } = require('@faker-js/faker')
+import { UsersPage } from './support/pages/users'
+import { faker } from '@faker-js/faker'
 
 
 test.describe('Teste básico', () => {
@@ -90,7 +91,7 @@ test.describe('Teste com outras validações', () => {
 })
 
 test.describe('Teste com modelagem de dados', () => {
-    test.only('registrar novo usuário', async ({page}) => {
+    test('registrar novo usuário', async ({page}) => {
 
         const user: UserModel = {
             firstName: 'Lucas',
@@ -124,6 +125,30 @@ test.describe('Teste com modelagem de dados', () => {
         await expect(page).toHaveTitle('Your Account Has Been Created!')
 
         await page.waitForTimeout(5000)
+    })
+})
+
+test.describe('Teste com Page Object Model', () => {
+    test('registrar novo usuário', async ({page}) => {
+
+        const user: UserModel = {
+            firstName: 'Lucas',
+            lastName: 'Rosa',
+            email: faker.internet.email(),
+            phone: '888777666',
+            password: '123456',
+            confirm: '123456',
+            newsletter: true,
+            terms: true
+        }
+
+        const usersPage = new UsersPage(page)
+        
+        await usersPage.visitUrl()
+        await usersPage.register(user)
+        await usersPage.checkTitle()
+        
+
     })
 })
 
