@@ -1,29 +1,57 @@
-# Projeto de Estudo em Teste Automatizado com Playwright, Node e TypeScript
+# 🎭 playwrightFastTrack
 
-### Introdução
-Este projeto é um estudo sobre teste automatizado utilizando Playwright, Node e TypeScript. O objetivo é criar uma suíte de testes automatizados para uma aplicação web, utilizando as melhores práticas de teste e desenvolvimento.
+Projeto de automação de testes com [Playwright](https://playwright.dev/), voltado para aprendizado rápido e boas práticas em testes end-to-end.
 
-*Tecnologias Utilizadas*
-- Playwright: uma biblioteca de teste automatizado para Node.js que permite testar aplicações web em diferentes navegadores.
-- Node.js: um ambiente de execução JavaScript que permite executar código JavaScript no lado do servidor.
-- TypeScript: um superset de JavaScript que adiciona tipagem estática e outras funcionalidades para melhorar a produtividade e a manutenibilidade do código.
+## 🚀 Tecnologias
 
-*Estrutura do Projeto*
-- `tests`: pasta que contém os testes automatizados.
-- `playwright.config.ts`: arquivo de configuração do Playwright.
-- `playwright-report`: pasta onde são salvos os resultados dos testes.
+- [Playwright](https://playwright.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/)
 
-*Como Executar os Testes*
-1. Instale as dependências do projeto com `npm install`.
-2. Execute os testes com `npx playwright test`.
+## 📦 Pré-requisitos
 
-#### Como Contribuir
-Se você deseja contribuir para este projeto, por favor:
+- Node.js 16+
+- npm ou yarn
+- Git
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua contribuição.
-3. Faça suas alterações e commit-as.
-4. Envie um pull request para o repositório original.
+## 🛠️ Instalação
 
-*Licença*
-Este projeto é licenciado sob a licença MIT.
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/lucasrosa14/playwrightFastTrack.git
+cd playwrightFastTrack
+npm install
+```
+
+## ▶️ Executando os testes
+
+```bash
+npx playwright test
+```
+
+Para abrir o relatório interativo após os testes:
+
+```bash
+npx playwright show-report
+```
+
+## 🧪 Estrutura dos testes
+
+- Os testes estão organizados em `tests/`
+- Fixtures e helpers ficam em `utils/` ou `playwright.config.ts`
+- Boa cobertura de exemplos de práticas recomendadas
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas!
+
+1. Faça um fork do projeto
+2. Crie uma nova branch: `git checkout -b feature/minha-feature`
+3. Commit suas mudanças: `git commit -m 'feat: adiciona nova feature'`
+4. Push para o repositório: `git push origin feature/minha-feature`
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
