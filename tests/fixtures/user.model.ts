@@ -4,7 +4,7 @@ interface UserModel {
     email: string,
     password: string,
     confirm: string,
-    phone: string,
+    telephone: string,
     newsletter: boolean,
     terms: boolean
 }

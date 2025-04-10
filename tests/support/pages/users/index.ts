@@ -1,16 +1,37 @@
-import { Page, expect } from '@playwright/test'
+import { Locator, Page, expect } from '@playwright/test'
 import { UserModel } from '../../../fixtures/user.model'
 
 export class UsersPage {
 
     readonly page: Page
+    readonly urlRegister: string
+    readonly firstName: Locator
+    readonly lastName: Locator  
+    readonly email: Locator
+    readonly telephone: Locator
+    readonly password: Locator
+    readonly confirm: Locator
+    readonly newsletterYes: Locator
+    readonly terms: Locator
+    readonly continueButton: Locator
 
     constructor(page: Page) {
         this.page = page
+        this.urlRegister = 'https://ecommerce-playground.lambdatest.io/index.php?route=account/register'
+        this.firstName = page.locator('#input-firstname')
+        this.lastName = page.locator('#input-lastname')
+        this.email = page.locator('#input-email')
+        this.telephone = page.locator('#input-telephone')
+        this.password = page.locator('#input-password')
+        this.confirm = page.locator('#input-confirm')
+        this.newsletterYes = page.locator('xpath=//label[@for="input-newsletter-yes"]')
+        this.terms = page.locator('xpath=//label[@for="input-agree"]')  
+        this.continueButton = page.locator('xpath=//input[@value="Continue"]')
+        
     }
 
     async visitUrl() {
-        await this.page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register')
+        await this.page.goto(this.urlRegister)
     }
 
     async checkTitle() {
@@ -19,22 +40,22 @@ export class UsersPage {
 
     async register(user: UserModel) {
         
-        await this.page.fill('id=input-firstname', user.firstName) 
-        await this.page.fill('id=input-lastname', user.lastName)
-        await this.page.fill('id=input-email', user.email)
-        await this.page.fill('id=input-telephone', user.phone)
-        await this.page.fill('id=input-password', user.password)
-        await this.page.fill('id=input-confirm', user.confirm)
+        await this.firstName.fill(user.firstName) 
+        await this.lastName.fill(user.lastName)
+        await this.email.fill(user.email)
+        await this.telephone.fill(user.telephone)
+        await this.password.fill(user.password)
+        await this.confirm.fill(user.confirm)
 
         if (user.newsletter) {
-        await this.page.click('xpath=//label[@for="input-newsletter-yes"]')
+        await this.newsletterYes.click()
         }
 
         if (user.terms) {
-        await this.page.click('xpath=//label[@for="input-agree"]')
+        await this.terms.click()
         }
         
-        await this.page.click('xpath=//input[@value="Continue"]')
+        await this.continueButton.click()
     }
 
 }

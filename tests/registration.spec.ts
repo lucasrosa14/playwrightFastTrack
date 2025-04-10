@@ -97,7 +97,7 @@ test.describe('Teste com modelagem de dados', () => {
             firstName: 'Lucas',
             lastName: 'Rosa',
             email: faker.internet.email(),
-            phone: '888777666',
+            telephone: '888777666',
             password: '123456',
             confirm: '123456',
             newsletter: true,
@@ -108,7 +108,7 @@ test.describe('Teste com modelagem de dados', () => {
         await page.fill('id=input-firstname', user.firstName) 
         await page.fill('id=input-lastname', user.lastName) //fazendo input diretamente no campo, sem usar o locator
         await page.fill('id=input-email', user.email)
-        await page.fill('id=input-telephone', user.phone)
+        await page.fill('id=input-telephone', user.telephone)
         await page.fill('id=input-password', user.password)
         await page.fill('id=input-confirm', user.confirm)
 
@@ -135,7 +135,7 @@ test.describe('Teste com Page Object Model', () => {
             firstName: 'Lucas',
             lastName: 'Rosa',
             email: faker.internet.email(),
-            phone: '888777666',
+            telephone: '888777666',
             password: '123456',
             confirm: '123456',
             newsletter: true,
