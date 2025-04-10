@@ -129,7 +129,7 @@ test.describe('Teste com modelagem de dados', () => {
 })
 
 test.describe('Teste com Page Object Model', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test.only('registrar novo usuário', async ({page}) => {
 
         const user: UserModel = {
             firstName: 'Lucas',

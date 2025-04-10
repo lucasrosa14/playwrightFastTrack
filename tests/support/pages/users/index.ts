@@ -1,10 +1,12 @@
 import { Locator, Page, expect } from '@playwright/test'
 import { UserModel } from '../../../fixtures/user.model'
 
+require('dotenv').config()
+const BASE_URL = process.env.BASE_URL
+
 export class UsersPage {
 
     readonly page: Page
-    readonly urlRegister: string
     readonly firstName: Locator
     readonly lastName: Locator  
     readonly email: Locator
@@ -17,7 +19,6 @@ export class UsersPage {
 
     constructor(page: Page) {
         this.page = page
-        this.urlRegister = 'https://ecommerce-playground.lambdatest.io/index.php?route=account/register'
         this.firstName = page.locator('#input-firstname')
         this.lastName = page.locator('#input-lastname')
         this.email = page.locator('#input-email')
@@ -31,7 +32,12 @@ export class UsersPage {
     }
 
     async visitUrl() {
-        await this.page.goto(this.urlRegister)
+        if(! BASE_URL) {
+            throw new Error('BASE_URL is not defined')  
+        }
+        await this.page.goto(BASE_URL)
+        await this.page.getByRole('button', { name: ' My account' }).hover()
+        await this.page.getByRole('link', { name: 'Register' }).click()
     }
 
     async checkTitle() {
