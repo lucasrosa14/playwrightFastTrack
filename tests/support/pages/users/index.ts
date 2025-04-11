@@ -36,8 +36,8 @@ export class UsersPage {
             throw new Error('BASE_URL is not defined')  
         }
         await this.page.goto(BASE_URL)
-        await this.page.getByRole('button', { name: ' My account' }).hover()
-        await this.page.getByRole('link', { name: 'Register' }).click()
+        // await this.page.getByRole('button', { name: ' My account' }).hover()
+        // await this.page.getByRole('link', { name: 'Register' }).click()
     }
 
     async checkTitle() {
