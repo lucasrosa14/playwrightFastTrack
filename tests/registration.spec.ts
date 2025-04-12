@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker'
 
 
 test.describe('Teste básico', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário básico', async ({page}) => {
         await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register')
         // const inputFirstName = page.locator('#input-firstname')
         // await inputFirstName.fill('Lucas')
@@ -23,7 +23,7 @@ test.describe('Teste básico', () => {
 })
 
 test.describe('Teste utilizando método built-in', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário utilizando métodos built-in', async ({page}) => {
         await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register')
         await page.getByLabel('First Name').fill('Lucas')
         await page.getByLabel('Last Name').fill('Rosa')
@@ -43,7 +43,7 @@ test.describe('Teste utilizando método built-in', () => {
 })
 
 test.describe('Teste utilizando Faker', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário utilizando Faker', async ({page}) => {
         await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register')
         await page.fill('id=input-firstname', faker.person.firstName()) 
         await page.fill('id=input-lastname', faker.person.lastName()) //fazendo input diretamente no campo, sem usar o locator
@@ -67,7 +67,7 @@ test.describe('Teste utilizando Faker', () => {
 })
 
 test.describe('Teste com outras validações', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário com outras validações', async ({page}) => {
         await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register')
         await page.fill('id=input-firstname', 'Lucas') 
         await page.fill('id=input-lastname', 'Rosa') //fazendo input diretamente no campo, sem usar o locator
@@ -91,7 +91,7 @@ test.describe('Teste com outras validações', () => {
 })
 
 test.describe('Teste com modelagem de dados', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário com modelagem de dados', async ({page}) => {
 
         const user: UserModel = {
             firstName: 'Lucas',
@@ -129,7 +129,7 @@ test.describe('Teste com modelagem de dados', () => {
 })
 
 test.describe('Teste com Page Object Model', () => {
-    test('registrar novo usuário', async ({page}) => {
+    test('Teste de cadastro de usuário com Page Object Model', async ({page}) => {
 
         const user: UserModel = {
             firstName: 'Lucas',
